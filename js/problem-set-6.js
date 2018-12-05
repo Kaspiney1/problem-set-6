@@ -11,6 +11,11 @@
  */
 
 function sayHello() {
+const canvas = document.getElementById('canvas1');
+const ctx = canvas.getContext('2d');
+
+ctx.font = '48px sans-serif';
+ctx.strokeText('Hello, World!', 10, 50);
 
 }
 
@@ -38,7 +43,27 @@ function sayHello() {
  */
 
 function drawRectangle() {
+  const canvas = document.getElementById('canvas2');
+  const ctx = canvas.getContext('2d');
 
+  let height = prompt("Enter a height between 1 and 250");
+  let width = prompt("Enter a width between 1 and 250");
+  let x = prompt("Enter an x-coordinate between 5 and 250 ");
+  let y = prompt("Enter a y-coordinate between 5 and 250");
+  if (height < 1){
+    alert("Your height is to small")
+  }
+  if (width < 1){
+    alert("Your width is to small")
+  }
+  if (x < 5){
+    alert("Your x value is to small")
+  }
+  if (y < 5){
+    alert("Your y value is to small")
+  }
+  if (height > 250 || width > 250 || x > 250 || y > 250 );
+    alert("Your rectangle is to large and won't fit on the canvas.");
 }
 
 /*
