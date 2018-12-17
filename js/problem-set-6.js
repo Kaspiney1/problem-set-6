@@ -92,8 +92,20 @@ function drawRectangle() {
  */
 
 function drawColoredRectangle() {
-
+let canvas = document.getElementById("canvas3");
+  let context = canvas.getContext("2d");
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  let color;
+  while(true){
+    color=prompt("Enter one of the valid colors: black, blue, green, orange, purple, red or yellow.")
+    if(color=="black" || color=="blue" || color=="green" || color=="orange" || color=="purple" || color=="red" || color=="yellow") {
+      break;
+    }
+  }
+  context.fillStyle=color;
+  context.fillRect(10,10,100,50);
 }
+
 
 /*
  * Triangle. 5 points.
