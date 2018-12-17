@@ -137,6 +137,41 @@ let canvas = document.getElementById("canvas3");
  */
 
 function drawTriangle() {
+  let canvas = document.getElementById("canvas4");
+  let context = canvas.getContext("2d");
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  let x=10;
+  let y=10;
+  let a;
+  let b;
+  let c;
+
+  while(true){
+	a=Number(prompt("Enter length of the first side"));
+	b=Number(prompt("Enter length of the second side"));
+	c=Number(prompt("Enter length of the third side (diagonal line)"));
+	if(((a**2) + (b**2) == (c**2)) && a>0 && b>0 && c>0 && canvas.width-x-a>=0 && canvas.height-y-b>=0){
+		break;
+	}else{
+		alert("That is not a valid triangle")
+	}
+  }
+ //Line A
+ context.beginPath(); 
+ context.moveTo(x,y); 
+ context.lineTo(x,y+a); 
+ context.stroke(); 
+ //Line B
+ context.beginPath();
+ context.moveTo(x,y+a);
+ context.lineTo(x+b,y+a);
+ context.stroke();
+ //Hypotenuse
+ context.beginPath();
+ context.moveTo(x,y);
+ context.lineTo(x+b,y+a);
+ context.stroke();
+}
 
 }
 
